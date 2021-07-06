@@ -89,7 +89,7 @@ select
     Metadata,
     Data
 from {tableName}
-with (updlock)
+with (updlock,rowlock)
 where Id = @Id
 ";
             }
@@ -104,7 +104,7 @@ select
     Metadata,
     Data
 from {tableName}
-with (updlock)
+with (updlock,rowlock)
 where Correlation_{propertyName} = @propertyValue
 ";
             }
@@ -127,7 +127,7 @@ select
     Metadata,
     Data
 from {tableName}
-with (updlock)
+with (updlock,rowlock)
 where {whereClause}
 ";
             }
